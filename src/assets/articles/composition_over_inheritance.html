@@ -1,0 +1,25 @@
+<h1>Composition over inheritance</h1>
+<h2>Dziedziczenie</h2>
+<p>
+  Kompozycja jest to "składanie" klasy. Tak samo gdy mówimy o kompozycji obrazu, to myślimy o tym z czego się składa.
+</p>
+<pre>
+  public class Car {{ '{' }}
+    private Date productionDate;
+    private String brand;
+  }
+  </pre>
+<p>
+  Kompozycja luźno łączy ze sobą klasy (np. Car i Date lub String). Mówimy tu o relacji "należy". Łatwo możemy dodać kolejną właściwość do klasy Car i z niej skorzystać.
+  Zmiany dokonane w klasach właściwości nie powodują zmian w klasie głównej.
+</p>
+<h2>Dziedziczenie</h2>
+<p>
+  Dziedziczenie silnie łączy ze sobą klasy. Mówimy tu o relacji "jest". Zmiany w klasie nadrzędnej powodują zmiany w klasie dziedziczącej.
+  Dziedziczenie jest bardzo rzadko używane.
+</p>
+<h2>Kompozcja nad dziedziczeniem</h2>
+<p>Obie metody pozwalają na ponowne użycie kodu(z klasy właściwości lub z klasy rodzica).
+  Kompozycja nad dziedziczeniem w programowaniu obiektowym jest zasadą, że klasy powinny osiągnąć zachowanie polimorficzne i ponowne użycie kodu przez swoją kompozycję, a nie dziedziczenie po klasie podstawowej lub nadrzędnej.
+  Klasy oparte na kompozycji łatwiej można testować (łatwiej jest ją zamockować).
+</p>
