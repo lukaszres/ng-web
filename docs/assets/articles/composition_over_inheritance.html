@@ -1,11 +1,11 @@
 <h1>Composition over inheritance</h1>
 <h2>Dziedziczenie</h2>
 <p>
-  Kompozycja jest to "składanie" klasy. Tak samo gdy mówimy o kompozycji obrazu, to myślimy o tym z czego się składa.
+  Kompozycja jest to "składanie" klasy(Klasa A używa klasy B). Tak samo gdy mówimy o kompozycji obrazu, to myślimy o tym z czego się składa.
 </p>
 <pre>
   public class Car {{ '{' }}
-    private Date productionDate;
+  private Date productionDate;
     private String brand;
   }
   </pre>
@@ -20,6 +20,18 @@
 </p>
 <h2>Kompozcja nad dziedziczeniem</h2>
 <p>Obie metody pozwalają na ponowne użycie kodu(z klasy właściwości lub z klasy rodzica).
-  Kompozycja nad dziedziczeniem w programowaniu obiektowym jest zasadą, że klasy powinny osiągnąć zachowanie polimorficzne i ponowne użycie kodu przez swoją kompozycję, a nie dziedziczenie po klasie podstawowej lub nadrzędnej.
+  Kompozycja nad dziedziczeniem w programowaniu obiektowym jest zasadą, że klasy powinny osiągnąć zachowanie polimorficzne i ponowne użycie kodu przez swoją kompozycję, a nie dziedziczenie po klasie
+  podstawowej lub nadrzędnej.
   Klasy oparte na kompozycji łatwiej można testować (łatwiej jest ją zamockować).
 </p>
+<ul>
+  <lh>Zalety:</lh>
+  <li>Mniejsza zależność między klasami.</li>
+  <li>Rozbicie klas na mniejsze (rozbicie odpowiedzialności na różne klasy).</li>
+  <li>Łatwiej zachować zgodność z zasadami SOLID.</li>
+  <li>Łatwiejsze testowanie kodu.</li>
+</ul>
+<ul>
+  <lh>Wady:</lh>
+  <li>Czasem lepiej zastosować dziedziczenie.</li>
+</ul>
