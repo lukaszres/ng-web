@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ng-web';
+  fileName: string = 'composition_over_inheritance.html';
 }
