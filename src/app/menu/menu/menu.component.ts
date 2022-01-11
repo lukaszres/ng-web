@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-menu',
@@ -9,16 +9,25 @@ export class MenuComponent implements OnInit {
 
   articleList = [
     {
-      filename: 'composition_over_inheritance.hml',
+      id: 'compositionOverInheritance',
+      parent: '',
+      filename: 'composition_over_inheritance.html',
       title: 'Composition over inheritance'
     }
   ];
+
+  @Output()
+  changeArticleEvent = new EventEmitter<string>();
 
   constructor() {
   }
 
   ngOnInit(): void {
 
+  }
+
+  changeArticle(articleFilename: string): void {
+    this.changeArticleEvent.emit(articleFilename);
   }
 
 }

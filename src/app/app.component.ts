@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ng-web';
-  fileName: string = 'composition_over_inheritance.html';
+  fileName: string = '';
+
+  changeArticle(fileName: string) {
+    this.fileName = fileName;
+  }
 }

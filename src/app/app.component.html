@@ -1,2 +1,2 @@
-<app-menu></app-menu>
-<app-article [fileName]="fileName"></app-article>
+<app-menu (changeArticleEvent)="changeArticle($event)"></app-menu>
+<app-article *ngIf="fileName" [fileName]="fileName"></app-article>

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 
 @Component({
@@ -6,7 +6,7 @@ import {HttpClient} from "@angular/common/http";
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.css']
 })
-export class ArticleComponent implements OnInit {
+export class ArticleComponent implements OnChanges {
 
   @Input()
   fileName: string = '';
@@ -16,7 +16,7 @@ export class ArticleComponent implements OnInit {
   constructor(private httpClient: HttpClient) {
   }
 
-  ngOnInit(): void {
+  ngOnChanges(changes: SimpleChanges): void {
     this.httpClient.get('assets/articles/' + this.fileName, {responseType: 'text'})
       .subscribe(data => this.htmlString = data);
   }
