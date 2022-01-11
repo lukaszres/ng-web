@@ -13,6 +13,12 @@ export class MenuComponent implements OnInit {
       parent: '',
       filename: 'composition_over_inheritance.html',
       title: 'Composition over inheritance'
+    },
+    {
+      id: 'solid',
+      parent: '',
+      filename: 'solid.html',
+      title: 'SOLID'
     }
   ];
 
