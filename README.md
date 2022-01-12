@@ -33,6 +33,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 ## Release notes
+- v1.2.1
+  - Application is not responsive fix
 - v1.2.0
   - Set menu in sidenav from Angular Material
 - v1.1.0
