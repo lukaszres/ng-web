@@ -30,3 +30,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - [this application page](https://lukaszres.github.io/ng-web/)
 - [versioning Angular applications](https://medium.com/@tolvaly.zs/how-to-version-number-angular-6-applications-4436c03a3bd3)
 - [Angular Material](https://material.angular.io/)
+
+
+## Release notes
+- v1.1.0
+  - 10 release scripts
