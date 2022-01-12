@@ -1,7 +1,15 @@
 <nav class="header">
+  <mat-toolbar *ngIf="mobileQuery.matches">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <app-menu (changeArticleEvent)="changeArticle($event)"></app-menu>
+    </mat-menu>
+  </mat-toolbar>
 </nav>
 <mat-sidenav-container class="main-container">
-  <mat-sidenav opened mode="side">
+  <mat-sidenav opened mode="side" *ngIf="!mobileQuery.matches">
     <app-menu (changeArticleEvent)="changeArticle($event)"></app-menu>
   </mat-sidenav>
   <app-article *ngIf="fileName" [fileName]="fileName"></app-article>
