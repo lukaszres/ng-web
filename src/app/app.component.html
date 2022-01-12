@@ -1,3 +1,19 @@
-<app-menu (changeArticleEvent)="changeArticle($event)"></app-menu>
-<app-article *ngIf="fileName" [fileName]="fileName"></app-article>
-{{currentApplicationVersion}}
+<nav class="header">
+</nav>
+<mat-sidenav-container class="main-container">
+  <mat-sidenav opened mode="side">
+    <app-menu (changeArticleEvent)="changeArticle($event)"></app-menu>
+  </mat-sidenav>
+  <app-article *ngIf="fileName" [fileName]="fileName"></app-article>
+</mat-sidenav-container>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-logo"></div>
+    <div class="footer-version">Current version: {{currentApplicationVersion}}</div>
+    <div class="footer-copyright">
+      <span>2022 &copy; lkre Poland.</span>
+      <span>All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+

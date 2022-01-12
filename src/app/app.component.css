@@ -1,0 +1,54 @@
+::ng-deep :root {
+  --header-height: 56px;
+  --footer-height: 88px;
+  --header-footer-bg-color: #3f51b5;
+  --header-footer-font-color: #fff;
+}
+
+.main-container {
+  position: absolute;
+  top: var(--header-height);
+  bottom: var(--footer-height);
+  left: 0;
+  right: 0;
+}
+
+.header{
+  height: var(--header-height);
+  left: 0;
+  right: 0;
+  background-color: var(--header-footer-bg-color);
+  color: var(--header-footer-font-color)
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  height: var(--footer-height);
+  left: 0;
+  right: 0;
+  background-color: var(--header-footer-bg-color);
+  color: var(--header-footer-font-color);
+}
+
+.footer-container {
+  margin: 12px;
+  height: calc(var(--footer-height) - 24px);
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.footer-logo {
+
+}
+
+.footer-version {
+  font-size: 12px;
+}
+
+.footer-copyright{
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+}

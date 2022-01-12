@@ -5,6 +5,10 @@ import {AppComponent} from './app.component';
 import {MenuComponent} from './menu/menu/menu.component';
 import {ArticleComponent} from './articles/article/article.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatNativeDateModule} from "@angular/material/core";
 
 @NgModule({
   declarations: [
@@ -14,7 +18,13 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+
+    MatSidenavModule,
+    FormsModule,
+    MatNativeDateModule,
+    ReactiveFormsModule,
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]
