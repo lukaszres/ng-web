@@ -19,6 +19,12 @@ export class MenuComponent implements OnInit {
       parent: '',
       filename: 'solid.html',
       title: 'SOLID'
+    },
+    {
+      id: 'single_responsibility',
+      parent: 'solid',
+      filename: 'solid/single_responsibility.html',
+      title: 'Single Responsibility'
     }
   ];
 
