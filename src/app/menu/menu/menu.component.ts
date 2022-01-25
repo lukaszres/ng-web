@@ -1,4 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {MenuService} from "./menu.service";
+import {MenuItem} from "../../models/MenuItem";
 
 @Component({
   selector: 'app-menu',
@@ -7,39 +9,25 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  articleList = [
-    {
-      id: 'compositionOverInheritance',
-      parent: '',
-      filename: 'composition_over_inheritance.html',
-      title: 'Composition over inheritance'
-    },
-    {
-      id: 'solid',
-      parent: '',
-      filename: 'solid.html',
-      title: 'SOLID'
-    },
-    {
-      id: 'single_responsibility',
-      parent: 'solid',
-      filename: 'solid/single_responsibility.html',
-      title: 'Single Responsibility'
-    }
-  ];
+  articleList: MenuItem[] = [];
 
   @Output()
   changeArticleEvent = new EventEmitter<string>();
 
-  constructor() {
+  constructor(private menuService: MenuService) {
   }
 
   ngOnInit(): void {
-
+    this.articleList = this.menuService.getMenu()
   }
 
   changeArticle(articleFilename: string): void {
     this.changeArticleEvent.emit(articleFilename);
+    console.log(articleFilename)
+  }
+
+  collapseSubMenu(menuItem: MenuItem): void {
+    menuItem.collapsed = !menuItem.collapsed;
   }
 
 }
