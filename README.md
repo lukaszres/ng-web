@@ -33,6 +33,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 ## Release notes
+- v1.3.0
+  - Add handling submenu #9
+  - New atricle: Single responsibility #14
 - v1.2.1
   - Application is not responsive fix
 - v1.2.0
