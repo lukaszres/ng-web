@@ -1,0 +1,71 @@
+<h2>Closed principle (Zasada otwarte/zamknięte)</h2>
+<p>
+  <q>Program powinien być otwarty na rozszerzenie, ale zamknięte na modyfikacje.</q>
+  Chodzi tu o to, że gdy już raz napisaliśmy klasę, to żeby jej nie zmieniać, tylko ewentualnie dopisywać nowe.
+  Można to uzyskać korzystając z interfejsów.
+</p>
+<mat-card>
+  <h3>Przykład I</h3>
+<pre>
+  public class Car {
+    private Engine engine;
+  }
+  public interface Engine {
+    void startEngine();
+  }
+  public class dieselEngine implements Engine {
+    @Override
+    public void startEngine(){
+      ...
+    }
+  }
+  public class gasolineEngine implements Engine {
+    @Override
+    public void startEngine(){
+      ...
+    }
+  }
+</pre>
+<p>
+  Dzięki użyciu interfejsu Engine nie musimy modyfikować klasy Car.
+  Wystarczy tylko podczas tworzenia obiektu wybrać odpowiednią implementację (silnik diesla czy benzynowy).
+</p>
+</mat-card>
+<mat-card>
+  <h3>Przykład II</h3>
+  <pre>
+  public class AreaCalculator {
+    public double calculateRectanglesAreas (Collecion<Rectangle> rectangles) {
+      double area = 0;
+      rectangles.foreach(rectangle -> area += rectangle.height * rectangle.width);
+      return area;
+    }
+    public double calculateTrianglesAreas (Collection<Triangle> triangles){
+      double area = 0;
+      triangles.foreach(triangle -> area += (triangle.base * triangle.height) / 2;
+      return area;
+    }
+  }
+  </pre>
+  <p>Kalkulator po modyfikacji kodu zgodnie z Open/Close principle może wyglądać tak:</p>
+  <pre>
+  public interface Shape {
+    public double calculateArea ();
+  }
+  public class Rectangle implements Shape {
+    public double height;
+    public double width;
+    @Override
+    public double calculateArea () {
+      return Width * Height;
+    }
+  }
+  public class AreaCalculator {
+    public double calculateArea (Collection<Shape> shapes) {
+      double area = 0;
+      shapes.foreach(shape -> area+= shape.calculateArea());
+      return area;
+    }
+  }
+  </pre>
+</mat-card>

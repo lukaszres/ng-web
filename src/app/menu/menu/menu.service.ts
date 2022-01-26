@@ -24,6 +24,11 @@ export class MenuService {
           id: 'single_responsibility',
           filename: 'solid/single_responsibility.html',
           title: 'Single Responsibility'
+        },
+        {
+          id: 'open_closed_principle',
+          filename: 'solid/open_closed_principle.html',
+          title: 'Open/Closed principle'
         }
       ]
     }
