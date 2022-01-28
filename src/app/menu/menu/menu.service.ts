@@ -29,6 +29,11 @@ export class MenuService {
           id: 'open_closed_principle',
           filename: 'solid/open_closed_principle.html',
           title: 'Open/Closed principle'
+        },
+        {
+          id: 'liskov_substitution_principle',
+          filename: 'solid/liskov_substitution_principle.html',
+          title: 'Liskov substitution principle'
         }
       ]
     }
