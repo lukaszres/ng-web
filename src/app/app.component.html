@@ -4,15 +4,15 @@
       <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <app-menu (changeArticleEvent)="changeArticle($event)"></app-menu>
+      <app-menu></app-menu>
     </mat-menu>
   </mat-toolbar>
 </nav>
 <mat-sidenav-container class="main-container">
   <mat-sidenav opened mode="side" *ngIf="!mobileQuery.matches">
-    <app-menu (changeArticleEvent)="changeArticle($event)"></app-menu>
+    <app-menu></app-menu>
   </mat-sidenav>
-  <app-article *ngIf="fileName" [fileName]="fileName"></app-article>
+  <router-outlet></router-outlet>
 </mat-sidenav-container>
 <footer class="footer">
   <div class="footer-container">

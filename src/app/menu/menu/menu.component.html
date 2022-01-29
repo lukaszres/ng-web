@@ -1,9 +1,10 @@
+<a routerLink="/" routerLinkActive="linkActive">home</a><br>
 <ul>
   <li *ngFor="let article of articleList">
-    <span (click)="changeArticle(article.filename); collapseSubMenu(article)">{{article.title}}</span>
+    <a routerLink="/article/{{article.filename}}" routerLinkActive="linkActive" (click)="collapseSubMenu(article)">{{article.title}}</a>
     <ul *ngIf="!article.collapsed">
       <li *ngFor="let subArticle of article.children">
-        <span (click)="changeArticle(subArticle.filename)">{{subArticle.title}}</span>
+        <a routerLink="/article/{{subArticle.filename}}" routerLinkActive="linkActive">{{subArticle.title}}</a>
       </li>
     </ul>
   </li>

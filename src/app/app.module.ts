@@ -13,6 +13,7 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatButtonModule} from "@angular/material/button";
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,6 @@ import {MatButtonModule} from "@angular/material/button";
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
-
     MatSidenavModule,
     FormsModule,
     MatNativeDateModule,
@@ -33,6 +33,7 @@ import {MatButtonModule} from "@angular/material/button";
     MatIconModule,
     MatMenuModule,
     MatButtonModule,
+    AppRoutingModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]

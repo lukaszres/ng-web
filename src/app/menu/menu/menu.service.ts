@@ -45,6 +45,11 @@ export class MenuService {
       menuItem.collapsed = true;
       return menuItem;
     });
+    this.menuItems.forEach(
+      menuItem => menuItem.children.forEach(
+        childMenu => childMenu.filename = childMenu.filename.replace('/', '%2F'))
+    );
+    console.log(this.menuItems);
   }
 
   getMenu(): MenuItem[] {
