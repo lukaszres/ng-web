@@ -1,0 +1,48 @@
+<h2>Liskov substitution principle</h2>
+<p>
+  <q>“Funkcje które używają wskaźników lub referencji do klas bazowych, muszą być w stanie używać również obiektów klas dziedziczących po klasach bazowych, bez dokładnej znajomości tych obiektów.”</q>
+</p>
+<p>
+  Ta zasada odnosi się do dziedziczenia metod przez klasy.
+  Zgodnie z tą zasadą klasa dziedzicząca powinna rozszerzać możliwości klasy bazowej (np. przez dodanie nowych metod) a nie ją zmieniać.
+</p>
+<p>
+  Popularnym przykładem na złamanie Liskov substitution principle jest przykład z obliczaniem pola kwadratu:
+</p>
+<pre>
+  public class Rectangle {
+    private int width;
+    private int height;
+
+    public void setWidth(int width) {
+      this.width = width;
+    }
+    public void setHeight(int height) {
+      this.height = height;
+    }
+    public int getArea() {
+      return this.width * this.height;
+    }
+  }
+
+  public class Square extends Rectangle{
+    public void setWidth(int width) {
+      this.width = width;
+      this.height = width;
+    }
+    public void setHeight(int height) {
+      this.height = height;
+      this.width = height;
+    }
+  }
+</pre>
+<pre>
+  Rectangle figure = new Square();
+  figure.setWidth = 5;
+  figure.setHeight = 10;
+  int area = figure.getArea();
+</pre>
+<p>
+  Sposobów na zaimplementowanie tego bez łamania zasady podstawiania Liskov jest wiele.
+  Można na przykład usunąć setery, a szerokość i wysokość ustawiać w konstruktorze.
+</p>

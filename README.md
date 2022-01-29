@@ -33,6 +33,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 ## Release notes
+- v1.3.1
+  - Use routing to choose article #21
+  - Add article: Liscov substitution #17
+  - Add article: Open/Close principle #15
 - v1.3.0
   - Add handling submenu #9
   - New atricle: Single responsibility #14
