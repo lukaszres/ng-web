@@ -1,0 +1,51 @@
+<p>
+  Zasada segregacji interfejsów mówi o tym, że należy ograniczać nadmiernie rozbudowane intefrjsy.
+  Czyli jeśli implementacje interfejsu nie implementują niektórych metod, to należy rozważyć wyrzucenie tej metody z interfejsu
+  lub podzielenie tego interfejsu na kilka innych.
+</p>
+<p>
+  Przykład złamania tej zasady:
+</p>
+<pre>
+  public interface Vehicle {
+    int getDistanceTraveled();
+    int getFuelConsumed();
+  }
+  public class FuelVehicle implements Vehicle {
+    private CarComputer carComputer;
+    @Override
+    public int getDistanceTraveled() {
+      return carComputer.getDistance();
+    }
+    @Override
+    public int getFuelConsumed() {
+      return carComputer.getFuelConsumed();
+    }
+  }
+  public class ElectricVehicle implements Vehicle {
+    private OnboardComputer onboardComputer;
+    @Override
+    public int getDistanceTraveled() {
+      return onboardComputer.getDistance();
+    }
+    @Override
+    public int getFuelConsumed() {
+      return null;
+    }
+  }
+</pre>
+<p>
+  W powyższym przykładzie metoda getFuelConsumed nie jest implementowana przez wszystkie implementacje interfejsu Vehicle.
+  Należałoby rozważyć usunięcie jej z interfejsu lub podzielić interfejs Vehicle np. na FuelVehicle i ElectricVehicle:
+</p>
+<pre>
+  public interface Vehicle {
+    int getDistanceTraveled();
+  }
+  public interface FuelVehicle extends Vehicle {
+    int getFuelConsumed();
+  }
+  public interface ElectricVehicle extends Vehicle {
+    int getBatteryConsumed();
+  }
+</pre>

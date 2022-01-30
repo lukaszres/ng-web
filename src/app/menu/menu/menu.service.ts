@@ -34,6 +34,11 @@ export class MenuService {
           id: 'liskov_substitution_principle',
           filename: 'solid/liskov_substitution_principle.html',
           title: 'Liskov substitution principle'
+        },
+        {
+          id: 'interface_segregation_principle',
+          filename: 'solid/interface_segregation_principle.html',
+          title: 'Interface segregation principle'
         }
       ]
     }
