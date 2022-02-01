@@ -1,0 +1,27 @@
+<h2>Dependency inversion principle</h2>
+<p>
+  Wysokopoziomowe moduły nie powinny zależeć od modułów niskopoziomowych - zależności między nimi powinny wynikać z abstrakcji.
+</p>
+<p>
+  Aby zależności między wysokopoziomowymi modułami a niskopoziomowymi mogły zostać zaimplementowane należy użyć odwróconego sterowania (IoC - Inversion of Control).
+  W tym wzorcu (IoC) to moduły wysokopoziomowe wybierają, jakich modułów niskopoziomowych będą używać.
+  Najpopularniejszą implementacją wzorca IoC jest Dependency Injection, czyli wstzykiwanie zależności.
+</p>
+<pre>
+  public static void main() {
+    Engine engine = new DieselEngine();
+    Gearbox gearbox = new AutomaticGearbox();
+    Car car = new Car(engine, gearbox);
+  }
+  public class Car {
+    private Engine engine;
+    private Gearbox gearbox;
+    public Car(Engine engine, Gearbox gearbox) {
+      this.engine = engine;
+      this.gearbox = gearbox;
+    }
+  }
+</pre>
+<p>
+  W powyższym przykładzie użyliśmy jednej z implementacji IoC - Constructor Injection. A tym samym nasz kod spełnia zasadę odwróconej zależności
+</p>

@@ -39,6 +39,11 @@ export class MenuService {
           id: 'interface_segregation_principle',
           filename: 'solid/interface_segregation_principle.html',
           title: 'Interface segregation principle'
+        },
+        {
+          id: 'dependency_inversion_principle',
+          filename: 'solid/dependency_inversion_principle.html',
+          title: 'Dependency inversion principle'
         }
       ]
     }
