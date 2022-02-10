@@ -10,6 +10,7 @@ import {ActivatedRoute} from "@angular/router";
 export class ArticleComponent implements OnInit {
   htmlString: string = '<p>jakiś tekst</p>';
   userSubscription: any;
+  SLASH_CODE: string = '%2F';
 
   constructor(private httpClient: HttpClient, private activatedRoute: ActivatedRoute) {
   }
@@ -19,7 +20,15 @@ export class ArticleComponent implements OnInit {
       () => {
         const articleId = this.activatedRoute.snapshot.paramMap.get('id');
         this.httpClient.get('assets/articles/' + articleId, {responseType: 'text'})
-          .subscribe(data => this.htmlString = data);
+          .subscribe(data => {
+            // var re = /([^<])\/([^>])/g;
+            var re = /([^<])\/([^>])/g;
+            // var re = /([^article])\//g;
+            // var re = /?!<\/;
+            const htmlString1 = data.replace(re, this.SLASH_CODE);
+            console.log(htmlString1);
+            this.htmlString = htmlString1;
+          });
       }
     );
   }
